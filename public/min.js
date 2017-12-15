@@ -1,1 +1,1 @@
-$(document).ready(function(){});
+$(document).ready(function(){var t=document.getElementById("canvas"),e=t.getContext("2d"),n=document.createElement("img");n.src="../images/gold.svg",n.onload=function(){!function(){e.font="bold 200pt Oswald",e.fillStyle=e.createPattern(n,"repeat"),e.textAlign="center";var l=t.width/2;e.fillText("WATER",l,400),e.fill()}()}});

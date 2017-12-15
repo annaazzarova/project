@@ -9,27 +9,17 @@ $font_promo: 'Open Sans', Verdana, sans-serif;
 $brown_text_color: #c99342;
 $brown_text_shadow_color: #996300;
 
-.ball {
-  margin: auto;
-  height: 81*$l + 21*$l;
-  width: 74*$l;
-  .hang {
-    width: 1*$l;
-    height: 21*$l;
-    margin: auto;
-    hr {
-      height: 100%;
-      border-width: 0 0 0 $l;
-      border-style: dotted;
-      border-color: $hang_color;
-      margin: 0 auto;
-    }
-  }
+
+.content-block {
+  width: 42*$l;
+  margin: 0 auto;
+  padding: 36*$l 0 0 0;
 
   .ny-header {
+    position: relative;
     text-align: center;
     margin: auto;
-    font-weight: bold;
+    line-height: 7*$l;
     font-family: $font_ny;
     font-size: 7*$l;
     color: $brown_text_color;
@@ -38,25 +28,42 @@ $brown_text_shadow_color: #996300;
       font-style: italic;
     }
     .offers {
+      text-transform: uppercase;
       letter-spacing: 4.2px;
       font-weight: bold;
-      line-height: 1.14;
     }
   }
 
   .access-code {
+    position: relative;
     text-align: center;
     margin: auto;
     font-weight: bold;
     font-family: $font_promo;
-    font-size: 7*$l;
+    line-height: 8*$l;
     .promo {
+      font-size: 2.5*$l;
+      line-height: 2.5*$l;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #00a8d6;
     }
     .year-2018 {
+      font-size: 8*$l;
+      font-weight: bold;
+      letter-spacing: -1px;
+      text-align: center;
+      color: #00a8d6;
+      -webkit-text-stroke: 1px #996300;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: linear-gradient(to top, #00508a, #00a8d6), linear-gradient(#00a8d6, #00a8d6);
     }
   }
 
   .book-button {
+    position: relative;
     font-family: $font_promo;
     .b-button {
       width: 42*$l;
@@ -68,22 +75,50 @@ $brown_text_shadow_color: #996300;
 
       text-align: right;
       .text-book {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
         font-size: 18px;
         font-weight: bold;
         line-height: 3*$l;
-        padding: 4*$l;
+        padding: 0 4*$l;
         color: #ffffff;
         text-shadow: 0.7px 0.7px 0 #996300;
+        text-transform: uppercase;
       }
     }
-  }
 
-  object {
-    height: 81*$l;
+  }
+}
+
+
+.snowball {
+  position: absolute;
+  width: 100%;
+  .ball {
+    margin: auto;
+    height: 81*$l + 21*$l;
     width: 74*$l;
-    position: absolute;
-    #color {
-      fill: black;
+
+    .hang {
+      width: 1*$l;
+      height: 21*$l;
+      margin: auto;
+      hr {
+        height: 100%;
+        border-width: 0 0 0 $l;
+        border-style: dotted;
+        border-color: $hang_color;
+        margin: 0 auto;
+      }
+    }
+
+    object {
+      height: 81*$l;
+      width: 74*$l;
+      #color {
+        fill: black;
+      }
     }
   }
 }
@@ -91,14 +126,13 @@ $brown_text_shadow_color: #996300;
 .container {
   width: 100%;
   height: 100%;
+  position: absolute;
 
   &.offer {
-    position: absolute;
     opacity: 0.94;
     background-image: radial-gradient($light_color, $dark_color);
   }
   &.snowflakes {
-    position: relative;
     opacity: 0.6;
     background-image: url(/images/snowflake.svg);
     mix-blend-mode: overlay;
