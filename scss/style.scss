@@ -1,0 +1,106 @@
+@import "reset";
+$color: #fff;
+$l: 6px;
+$dark_color: #00508a;
+$light_color: #00a8d6;
+$hang_color: #b3833b;
+$font_ny: 'Lora', Georgia, serif;
+$font_promo: 'Open Sans', Verdana, sans-serif;
+$brown_text_color: #c99342;
+$brown_text_shadow_color: #996300;
+
+.ball {
+  margin: auto;
+  height: 81*$l + 21*$l;
+  width: 74*$l;
+  .hang {
+    width: 1*$l;
+    height: 21*$l;
+    margin: auto;
+    hr {
+      height: 100%;
+      border-width: 0 0 0 $l;
+      border-style: dotted;
+      border-color: $hang_color;
+      margin: 0 auto;
+    }
+  }
+
+  .ny-header {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-family: $font_ny;
+    font-size: 7*$l;
+    color: $brown_text_color;
+    -webkit-text-stroke: 1px $brown_text_shadow_color;
+    .new-year {
+      font-style: italic;
+    }
+    .offers {
+      letter-spacing: 4.2px;
+      font-weight: bold;
+      line-height: 1.14;
+    }
+  }
+
+  .access-code {
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-family: $font_promo;
+    font-size: 7*$l;
+    .promo {
+    }
+    .year-2018 {
+    }
+  }
+
+  .book-button {
+    font-family: $font_promo;
+    .b-button {
+      width: 42*$l;
+      height: 10*$l;
+      border-radius: 6px;
+      background-image: linear-gradient(to top, #ad7100 10%, #dba642 10%, #ad7d34);
+      box-shadow: 0px 3px 6px 0 rgba(0, 80, 186, 0.3);
+      display: inline-block;
+
+      text-align: right;
+      .text-book {
+        font-size: 18px;
+        font-weight: bold;
+        line-height: 3*$l;
+        padding: 4*$l;
+        color: #ffffff;
+        text-shadow: 0.7px 0.7px 0 #996300;
+      }
+    }
+  }
+
+  object {
+    height: 81*$l;
+    width: 74*$l;
+    position: absolute;
+    #color {
+      fill: black;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  &.offer {
+    position: absolute;
+    opacity: 0.94;
+    background-image: radial-gradient($light_color, $dark_color);
+  }
+  &.snowflakes {
+    position: relative;
+    opacity: 0.6;
+    background-image: url(/images/snowflake.svg);
+    mix-blend-mode: overlay;
+  }
+}
