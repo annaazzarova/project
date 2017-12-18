@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="/public/style.css">
 <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+
 <div class="container special-offer">
     <div class="container offer">
     </div>
@@ -13,18 +14,21 @@
             <div class="hang">
                 <hr>
             </div>
-            <!--<img src="/images/ball.svg" class="ball-icon">-->
-            <object type="image/svg+xml" data='/images/ball.svg' id=’ball-icon’></object>
+            <img src="/images/ball.svg" class="ball-icon">
+            <!--<object type="image/svg+xml" data='/images/ball.svg' id=’ball-icon’></object>-->
 
         </div>
     </div>
     <div class="content-block">
         <div class="ny-header">
-            <p class="new-year">Новогодние</p>
-            <p class="offers">скидки</p>
+            <clipPath class="new-year" id="clipping-text">Новогодние</clipPath>
+            <clipPath class="offers" id="clipping-text">скидки</clipPath>
         </div>
         <div class="access-code">
-            <span class="promo">промокод</span>
+            <div class="promo-block">
+                <span class="promo">промокод</span>
+            </div>
+
             <span class="year-2018">2018</span>
         </div>
 

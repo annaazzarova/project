@@ -1,6 +1,4 @@
 @import "reset";
-$color: #fff;
-$l: 6px;
 $dark_color: #00508a;
 $light_color: #00a8d6;
 $hang_color: #b3833b;
@@ -8,133 +6,476 @@ $font_ny: 'Lora', Georgia, serif;
 $font_promo: 'Open Sans', Verdana, sans-serif;
 $brown_text_color: #c99342;
 $brown_text_shadow_color: #996300;
+$brown_book_button1: #ad7100;
+$brown_book_button2: #dba642;
+$brown_book_button3: #ad7d34;
 
+@media only screen and (max-width: 960px) {
+  $l: 6px;
 
-.content-block {
-  width: 42*$l;
-  margin: 0 auto;
-  padding: 36*$l 0 0 0;
+  .content-block {
+    width: 42*$l;
+    margin: 0 auto;
+    padding: 36*$l 0 0 0;
 
-  .ny-header {
-    position: relative;
-    text-align: center;
-    margin: auto;
-    line-height: 7*$l;
-    font-family: $font_ny;
-    font-size: 7*$l;
-    color: $brown_text_color;
-    -webkit-text-stroke: 1px $brown_text_shadow_color;
-    .new-year {
-      font-style: italic;
-    }
-    .offers {
-      text-transform: uppercase;
-      letter-spacing: 4.2px;
-      font-weight: bold;
-    }
-  }
-
-  .access-code {
-    position: relative;
-    text-align: center;
-    margin: auto;
-    font-weight: bold;
-    font-family: $font_promo;
-    line-height: 8*$l;
-    .promo {
-      font-size: 2.5*$l;
-      line-height: 2.5*$l;
-      text-transform: uppercase;
-      font-weight: bold;
-      color: #00a8d6;
-    }
-    .year-2018 {
-      font-size: 8*$l;
-      font-weight: bold;
-      letter-spacing: -1px;
+    .ny-header {
+      position: relative;
       text-align: center;
-      color: #00a8d6;
-      -webkit-text-stroke: 1px #996300;
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(to top, #00508a, #00a8d6), linear-gradient(#00a8d6, #00a8d6);
-    }
-  }
-
-  .book-button {
-    position: relative;
-    font-family: $font_promo;
-    .b-button {
-      width: 42*$l;
-      height: 10*$l;
-      border-radius: 6px;
-      background-image: linear-gradient(to top, #ad7100 10%, #dba642 10%, #ad7d34);
-      box-shadow: 0px 3px 6px 0 rgba(0, 80, 186, 0.3);
-      display: inline-block;
-
-      text-align: right;
-      .text-book {
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 18px;
-        font-weight: bold;
-        line-height: 3*$l;
-        padding: 0 4*$l;
-        color: #ffffff;
-        text-shadow: 0.7px 0.7px 0 #996300;
-        text-transform: uppercase;
-      }
-    }
-
-  }
-}
-
-
-.snowball {
-  position: absolute;
-  width: 100%;
-  .ball {
-    margin: auto;
-    height: 81*$l + 21*$l;
-    width: 74*$l;
-
-    .hang {
-      width: 1*$l;
-      height: 21*$l;
       margin: auto;
-      hr {
-        height: 100%;
-        border-width: 0 0 0 $l;
-        border-style: dotted;
-        border-color: $hang_color;
-        margin: 0 auto;
+      line-height: 7*$l;
+      font-family: $font_ny;
+      font-size: 7*$l;
+      color: $brown_text_color;
+      -webkit-text-stroke: 1px $brown_text_shadow_color;
+      #clipping-text {
+        background: url(/images/gold.svg) repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+      .item {
+        clip-path: url(/images/gold.svg);
+      }
+      .new-year {
+        font-style: italic;
+      }
+      .offers {
+        text-transform: uppercase;
+        letter-spacing: 4.2px;
+        font-weight: bold;
       }
     }
 
-    object {
-      height: 81*$l;
-      width: 74*$l;
-      #color {
-        fill: black;
+    .access-code {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      font-weight: bold;
+      font-family: $font_promo;
+      line-height: 8*$l;
+      padding: 4*$l 0 4*$l 0;
+      .promo-block {
+        float: left;
+        text-align: right;
+        width: 50%;
+        padding-top: 1*$l;
+        .promo {
+          font-size: 2.5*$l;
+          line-height: 2.5*$l;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $light_color;
+          padding: 0 2*$l 0 0;
+        }
       }
+
+      .year-2018 {
+        font-size: 8*$l;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2*$l #ffffff;
+        &:after {
+          content: "2018";
+          color: $light_color;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-stroke: 1px #996300;
+          background-image: linear-gradient(to top, $dark_color, $light_color), linear-gradient($light_color, $light_color);
+          position: absolute;
+          margin: 0 0 0 -17.5*$l;
+        }
+      }
+
+    }
+
+    .book-button {
+      position: relative;
+      font-family: $font_promo;
+      .b-button {
+        width: 42*$l;
+        height: 10*$l;
+        border-radius: 6px;
+        background-image: linear-gradient(to top, $brown_book_button1 10%, $brown_book_button2 10%, $brown_book_button3);
+        box-shadow: 0px 3px 6px 0 rgba($dark_color, 0.3);
+        display: inline-block;
+
+        text-align: right;
+        .text-book {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 3*$l;
+          padding: 0 7.5*$l;
+          color: #ffffff;
+          text-shadow: 0.7px 0.7px 0 $brown_text_shadow_color;
+          text-transform: uppercase;
+        }
+      }
+
+    }
+  }
+
+
+  .snowball {
+    position: absolute;
+    width: 100%;
+    .ball {
+      margin: auto;
+      height: 81*$l + 21*$l;
+      width: 74*$l;
+
+
+      .hang {
+        width: 1*$l;
+        height: 21*$l;
+        margin: auto;
+        hr {
+          height: 100%;
+          border-width: 0 0 0 $l;
+          border-style: dotted;
+          border-color: $hang_color;
+          margin: 0 auto;
+        }
+      }
+
+      .ball-icon {
+        height: 81*$l;
+        width: 74*$l;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    &.offer {
+      opacity: 0.94;
+      background-image: radial-gradient($light_color, $dark_color);
+    }
+    &.snowflakes {
+      opacity: 0.6;
+      background-image: url(/images/snowflake.svg);
+      mix-blend-mode: overlay;
     }
   }
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  position: absolute;
+@media only screen and (min-width: 961px) and (max-width: 1200px) {
+  $l: 7px;
+  .content-block {
+    width: 42*$l;
+    margin: 0 auto;
+    padding: 36*$l 0 0 0;
 
-  &.offer {
-    opacity: 0.94;
-    background-image: radial-gradient($light_color, $dark_color);
+    .ny-header {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      line-height: 7*$l;
+      font-family: $font_ny;
+      font-size: 7*$l;
+      color: $brown_text_color;
+      -webkit-text-stroke: 1px $brown_text_shadow_color;
+      #clipping-text {
+        background: url(/images/gold.svg) repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+      .item {
+        clip-path: url(/images/gold.svg);
+      }
+      .new-year {
+        font-style: italic;
+      }
+      .offers {
+        text-transform: uppercase;
+        letter-spacing: 4.2px;
+        font-weight: bold;
+      }
+    }
+
+    .access-code {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      font-weight: bold;
+      font-family: $font_promo;
+      line-height: 8*$l;
+      padding: 4*$l 0 4*$l 0;
+      .promo-block {
+        float: left;
+        text-align: right;
+        width: 50%;
+        padding-top: 1*$l;
+        .promo {
+          font-size: 2.5*$l;
+          line-height: 2.5*$l;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $light_color;
+          padding: 0 2*$l 0 0;
+        }
+      }
+
+      .year-2018 {
+        font-size: 8*$l;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2*$l #ffffff;
+        &:after {
+          content: "2018";
+          color: $light_color;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-stroke: 1px #996300;
+          background-image: linear-gradient(to top, $dark_color, $light_color), linear-gradient($light_color, $light_color);
+          position: absolute;
+          margin: 0 0 0 -17.5*$l;
+        }
+      }
+
+    }
+
+    .book-button {
+      position: relative;
+      font-family: $font_promo;
+      .b-button {
+        width: 42*$l;
+        height: 10*$l;
+        border-radius: 6px;
+        background-image: linear-gradient(to top, $brown_book_button1 10%, $brown_book_button2 10%, $brown_book_button3);
+        box-shadow: 0px 3px 6px 0 rgba($dark_color, 0.3);
+        display: inline-block;
+
+        text-align: right;
+        .text-book {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 3*$l;
+          padding: 0 7.5*$l;
+          color: #ffffff;
+          text-shadow: 0.7px 0.7px 0 $brown_text_shadow_color;
+          text-transform: uppercase;
+        }
+      }
+
+    }
   }
-  &.snowflakes {
-    opacity: 0.6;
-    background-image: url(/images/snowflake.svg);
-    mix-blend-mode: overlay;
+
+
+  .snowball {
+    position: absolute;
+    width: 100%;
+    .ball {
+      margin: auto;
+      height: 81*$l + 21*$l;
+      width: 74*$l;
+
+
+      .hang {
+        width: 1*$l;
+        height: 21*$l;
+        margin: auto;
+        hr {
+          height: 100%;
+          border-width: 0 0 0 $l;
+          border-style: dotted;
+          border-color: $hang_color;
+          margin: 0 auto;
+        }
+      }
+
+      .ball-icon {
+        height: 81*$l;
+        width: 74*$l;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    &.offer {
+      opacity: 0.94;
+      background-image: radial-gradient($light_color, $dark_color);
+    }
+    &.snowflakes {
+      opacity: 0.6;
+      background-image: url(/images/snowflake.svg);
+      mix-blend-mode: overlay;
+    }
+  }
+}
+
+@media (min-width: 1201px) {
+  $l: 8px;
+
+  .content-block {
+    width: 42*$l;
+    margin: 0 auto;
+    padding: 36*$l 0 0 0;
+
+    .ny-header {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      line-height: 7*$l;
+      font-family: $font_ny;
+      font-size: 7*$l;
+      color: $brown_text_color;
+      -webkit-text-stroke: 1px $brown_text_shadow_color;
+      #clipping-text {
+        background: url(/images/gold.svg) repeat;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+      }
+      .item {
+        clip-path: url(/images/gold.svg);
+      }
+      .new-year {
+        font-style: italic;
+      }
+      .offers {
+        text-transform: uppercase;
+        letter-spacing: 4.2px;
+        font-weight: bold;
+      }
+    }
+
+    .access-code {
+      position: relative;
+      text-align: center;
+      margin: auto;
+      font-weight: bold;
+      font-family: $font_promo;
+      line-height: 8*$l;
+      padding: 4*$l 0 4*$l 0;
+      .promo-block {
+        float: left;
+        text-align: right;
+        width: 50%;
+        padding-top: 1*$l;
+        .promo {
+          font-size: 2.5*$l;
+          line-height: 2.5*$l;
+          text-transform: uppercase;
+          font-weight: bold;
+          color: $light_color;
+          padding: 0 2*$l 0 0;
+        }
+      }
+
+      .year-2018 {
+        font-size: 8*$l;
+        font-weight: bold;
+        letter-spacing: -1px;
+        text-align: center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 2*$l #ffffff;
+        &:after {
+          content: "2018";
+          color: $light_color;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-stroke: 1px #996300;
+          background-image: linear-gradient(to top, $dark_color, $light_color), linear-gradient($light_color, $light_color);
+          position: absolute;
+          margin: 0 0 0 -17.5*$l;
+        }
+      }
+
+    }
+
+    .book-button {
+      position: relative;
+      font-family: $font_promo;
+      .b-button {
+        width: 42*$l;
+        height: 10*$l;
+        border-radius: 6px;
+        background-image: linear-gradient(to top, $brown_book_button1 10%, $brown_book_button2 10%, $brown_book_button3);
+        box-shadow: 0px 3px 6px 0 rgba($dark_color, 0.3);
+        display: inline-block;
+
+        text-align: right;
+        .text-book {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 18px;
+          font-weight: bold;
+          line-height: 3*$l;
+          padding: 0 7.5*$l;
+          color: #ffffff;
+          text-shadow: 0.7px 0.7px 0 $brown_text_shadow_color;
+          text-transform: uppercase;
+        }
+      }
+
+    }
+  }
+
+
+  .snowball {
+    position: absolute;
+    width: 100%;
+    .ball {
+      margin: auto;
+      height: 81*$l + 21*$l;
+      width: 74*$l;
+
+
+      .hang {
+        width: 1*$l;
+        height: 21*$l;
+        margin: auto;
+        hr {
+          height: 100%;
+          border-width: 0 0 0 $l;
+          border-style: dotted;
+          border-color: $hang_color;
+          margin: 0 auto;
+        }
+      }
+
+      .ball-icon {
+        height: 81*$l;
+        width: 74*$l;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    &.offer {
+      opacity: 0.94;
+      background-image: radial-gradient($light_color, $dark_color);
+    }
+    &.snowflakes {
+      opacity: 0.6;
+      background-image: url(/images/snowflake.svg);
+      mix-blend-mode: overlay;
+    }
   }
 }
